@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import StyledBox from './StyledBox';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const Box = () => {
     const [color, setColor] = useState("");
@@ -35,11 +37,11 @@ const Box = () => {
                         colorError && <p>{colorError}</p>
                     }
                 </div>
-                <input type="submit" value="Add" disabled={!!colorError} />
+                <input type="submit" value="Add" disabled={!!colorError} className='mt-2' />
             </form>
-            <div className='row my-2'>
+            <div className='d-flex , mt-2' >
                 {colors.map((color, index) => (
-                    <StyledBox key={index} backGroundColor={color} className=" mx-3 "></StyledBox>
+                    <StyledBox key={index} backGroundColor={color} className=" mx-3"></StyledBox>
                 ))}
             </div>
         </div>

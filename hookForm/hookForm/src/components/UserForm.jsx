@@ -6,19 +6,22 @@ const UserForm = (props) => {
      const [email, setEmail] = useState("");
      const [password, setPassword] = useState("");
      const [confirmpass, setConfirmpassowrd] = useState("");
+     const [age, setAge] = useState("");
 
      const createUser = (e) => {
           // we must prevent the default refresh of the browser to keep our state from being reset
           e.preventDefault();
 
           // shorthand ES6 syntax for building an object - see notes above
-          const newUser = { firstname, lastname, email, password, confirmpass };
+          const newUser = { firstname, lastname, email, password, confirmpass, age};
           console.log("Welcome", newUser);
           setFirstname("");
           setLastname("");
           setEmail("");
           setPassword("");
           setConfirmpassowrd("");
+          setAge("");
+
      };
 
      return (
@@ -44,8 +47,14 @@ const UserForm = (props) => {
                <div>
                     <label>Confirm password: </label>
                     <input type="text" value={confirmpass} onChange={(e) => setConfirmpassowrd(e.target.value)} />
+                    
+                    <label>Age: </label>
+                    <input type="text" value={age} onChange={(e) => setAge(e.target.value)} />
+
                     <input type="submit" value="Create User" />
                </div>
+
+
           </form>
 
           <div>
@@ -54,6 +63,7 @@ const UserForm = (props) => {
                <h3>eamil: {email}</h3>
                <h3>password {password}</h3>
                <h3>Confirm password {confirmpass}</h3>
+               <h3>Age {Age}</h3>
           </div>
           </>
      );
